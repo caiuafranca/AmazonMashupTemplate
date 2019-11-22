@@ -1,0 +1,328 @@
+/* ESTILOS GLOBAIS */
+
+
+/* MOBILE FIRST */
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 100;
+    src: url(res/fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 200;
+    src: url(res/fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 300;
+    src: url(res/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    src: url(res/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 500;
+    src: url(res/fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 600;
+    src: url(res/fonts/Roboto-Black.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, button {
+    font-family: Roboto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 45px;
+    background-color: #232F3E;
+}
+
+.navbar .app-title,
+.navbar .btn-menu {
+    position: absolute;
+    left: 10px;
+}
+
+.navbar .btn-filters {
+    position: absolute;
+    right: 10px;
+}
+
+.navbar .app-title {
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+.navbar button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar button:hover .icon {
+    fill: #aaa;
+}
+
+
+/* END NAVBAR */
+
+
+/* PAGE HEADER  */
+
+.page-header {
+    height: 50px;
+    background-color: #4C5869;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-title {
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.header-navigation .navigation-list {
+    display: flex;
+    height: 100%;
+}
+
+.header-navigation .navigation-link.active .icon {
+    fill: #FF9900;
+}
+
+.header-navigation {
+    display: none;
+    height: 100%;
+}
+
+.header-navigation .navigation-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 0 20px;
+    height: 100%;
+    font-family: Roboto;
+}
+
+.header-navigation .navigation-link.active {
+    background-color: #5C6A7E;
+}
+
+.header-navigation .navigation-link svg {
+    margin-right: 10px;
+}
+
+
+/* SIDEBAR NAV */
+.sidebar-nav {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 268px;
+    background: #121624;
+    box-shadow: 1px 1px 10px -3px black;
+    transition: all 300ms linear;
+}
+
+.sidebar-nav.opened {
+    left: 0;
+}
+
+.sidebar-nav .sidebar-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background: #232F3E;
+}
+
+.sidebar-nav .sidebar-header .app-logo {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sidebar-nav .app-title {
+    color: white;
+    font-size: 16px;
+    padding-right: 60px;
+    font-weight: 400;
+}
+
+.sidebar-navigation .navigation-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 12px;
+    font-family: Roboto;
+    height: 61px;
+    border-bottom: 1px solid #232F3E;
+}
+
+.sidebar-navigation .navigation-link.active {
+    background: #232F3E;
+}
+
+.sidebar-navigation .navigation-link.active .icon {
+    fill: #FF9900;
+}
+
+.sidebar-navigation .navigation-link svg {
+    margin-right: 10px;
+}
+
+
+/* SIDEBAR FILTERS COMPONENT */
+
+.sidebar-filters {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -300px;
+    bottom: 0;
+    width: 268px;
+    background: #121624;
+    box-shadow: 1px 1px 10px -3px black;
+    transition: all 300ms linear;
+}
+
+.sidebar-filters.opened {
+    right: 0;
+}
+
+
+
+/* FADE COMPONENT */
+
+.fade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.73);
+    z-index: 2;
+    display: none;
+}
+
+.fade.active {
+    display: block;
+}
+
+/* END FADE COMPONENT */
+
+
+/* CUSTOM KPI */
+
+
+/* PARA DESKTOP */
+
+@media(min-width: 1024px) {
+
+    .fade.active {
+        display: none;
+    }
+
+    .navbar .app-title {
+        display: block;
+    }
+
+    .btn-menu {
+        display: none;
+    }
+
+    .page-header .page-title {
+        display: none;
+    }
+
+    .header-navigation {
+        display: block;
+    }
+    
+}
+
+
+/* QLIKOBJECT COMPONENT */
+
+.qlik-mashup-object {
+    /* background-color: yellow;
+    border: 1px solid black; */
+    min-width: 260px;
+    flex: 1;
+}
+
+
+/* PAGE */
+
+.page {
+    padding: 10px;
+}
+
+/* PAGE DASHBOARD */
+
+.object-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* END PAGE DASHBOARD */
+
+
+/* QLIK TABLE TITLE */
+
+.qv-object .qv-object-title .qv-object-title-text {
+    color: #5C6A7E;
+    font-family: Roboto;
+    font-size: 18px;
+}
+
+/* END QLIK TABLE TITLE */

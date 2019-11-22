@@ -1,0 +1,11 @@
+{
+    "type": "mashup",
+    "name": "Amazon Mashup",
+    "description": "Mashup para fins de treinamento",
+    "version": "1.0.0",
+    "author": "Cluster",
+    "keywords": "qlik-sense, visualization, mashup",
+    "dependencies": {
+        "qlik-sense": ">=3.0.x"
+	 }
+}
