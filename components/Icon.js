@@ -3,6 +3,7 @@ class Icon extends React.Component {
         super(props);
         this.state = {};
         this.icons = {
+            close: "M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z",
             filter: "M10,18h4V16H10ZM3,6V8H21V6Zm3,7H18V11H6Z",
             burger: "M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z",
             piechart: "M11,2V22A10.056,10.056,0,0,1,11,2Zm2.03,0v8.99H22A10.044,10.044,0,0,0,13.03,2Zm0,11.01V22A10.035,10.035,0,0,0,22,13.01Z",

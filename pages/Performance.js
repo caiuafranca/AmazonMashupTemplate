@@ -10,8 +10,8 @@ class Performance extends React.Component {
     }
 
     render() {
-        return <div class="page">
-            <h1>PERFORMANCE</h1>
+        return <div style={{padding: 0}} class="page">
+            <Map></Map>
         </div>
     }
 

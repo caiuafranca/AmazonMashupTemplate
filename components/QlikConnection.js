@@ -24,7 +24,15 @@ class QlikConnection extends React.Component {
         });
 
         require(["js/qlik"], (qlik) => {
-            let app = qlik.openApp("Helpdesk Management-Mashup.qvf", config);
+
+            let app;
+            if(window.location.hostname == "localhost") {
+                app = qlik.openApp("Helpdesk Management-Mashup.qvf", config);
+            } else {
+                // AQUI VAI O ID DO QVF DO SERVIDOR
+                app = qlik.openApp("13e737e0-dfaa-4b28-9a50-91ee320f1dcb", config);
+            }
+
             window.app = app;
             this.props._onConnectionSuccessful({
                 app: app

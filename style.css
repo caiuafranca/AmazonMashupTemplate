@@ -43,6 +43,10 @@
     box-sizing: border-box;
 }
 
+html, body, #mashup {
+    height: 100%;
+}
+
 body {
     margin: 0;
 }
@@ -51,8 +55,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, button {
-    font-family: Roboto;
+h1, h2, h3, h4, h5, h6, p, button, span, a {
+    font-family: Roboto!important;
+}
+
+button.lui-icon,
+span.lui-icon,
+a.lui-icon {
+    font-family: "LUI Icons"!important;
 }
 
 ul {
@@ -77,8 +87,8 @@ a {
     padding-left: 10px;
     padding-right: 10px;
     width: 100%;
-    height: 45px;
-    background-color: #232F3E;
+    min-height: 45px;
+    background-color: rgb(45, 64, 102);
 }
 
 .navbar .app-title,
@@ -116,7 +126,7 @@ a {
 /* PAGE HEADER  */
 
 .page-header {
-    height: 50px;
+    min-height: 50px;
     background-color: #4C5869;
     display: flex;
     justify-content: center;
@@ -154,7 +164,7 @@ a {
 }
 
 .header-navigation .navigation-link.active {
-    background-color: #5C6A7E;
+    background-color:rgb(108, 125, 158);
 }
 
 .header-navigation .navigation-link svg {
@@ -170,7 +180,7 @@ a {
     left: -300px;
     bottom: 0;
     width: 268px;
-    background: #121624;
+    background: rgb(45, 64, 102);
     box-shadow: 1px 1px 10px -3px black;
     transition: all 300ms linear;
 }
@@ -183,8 +193,13 @@ a {
     height: 70px;
     display: flex;
     align-items: center;
-    background: #232F3E;
+    background:rgb(45, 64, 102);
 }
+
+.sidebar-nav .sidebar-header img {
+    margin-left: 10px;
+}
+
 
 .sidebar-nav .sidebar-header .app-logo {
     margin-left: 10px;
@@ -193,7 +208,8 @@ a {
 
 .sidebar-nav .app-title {
     color: white;
-    font-size: 16px;
+    font-size: 20px;
+    margin-left: 10px;
     padding-right: 60px;
     font-weight: 400;
 }
@@ -206,10 +222,11 @@ a {
     font-family: Roboto;
     height: 61px;
     border-bottom: 1px solid #232F3E;
+    border-top: 1px solid #232F3E;
 }
 
 .sidebar-navigation .navigation-link.active {
-    background: #232F3E;
+    background: rgb(108, 125, 158);
 }
 
 .sidebar-navigation .navigation-link.active .icon {
@@ -230,9 +247,10 @@ a {
     right: -300px;
     bottom: 0;
     width: 268px;
-    background: #121624;
+    background: rgb(45, 64, 102);
     box-shadow: 1px 1px 10px -3px black;
     transition: all 300ms linear;
+    padding: 0 15px;
 }
 
 .sidebar-filters.opened {
@@ -249,7 +267,7 @@ a {
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.73);
+    background: rgba(45, 64, 102, 0.73);
     z-index: 2;
     display: none;
 }
@@ -261,7 +279,62 @@ a {
 /* END FADE COMPONENT */
 
 
-/* CUSTOM KPI */
+
+
+/* QLIK NATIVE OBJECTS - CUSTOM STYLES */
+
+.qv-collapsed-listbox .title-wrapper .title {
+    color: white;
+    font-weight: normal;
+}
+
+.qv-state-count-bar .state.selected {
+    background: #FFCA47;
+}
+
+.qv-state-count-bar .state.optional {
+    background-color: #272b39;
+}
+
+.qv-state-count-bar {
+    border: 0px solid #475465;
+}
+
+.sel-toolbar-icon {
+    color: white;
+}
+
+.lui-popover {
+    background-color: #272b39;
+    border: 1px solid #3b4555;
+}
+
+.qv-listbox .serverLocked,
+.qv-listbox .serverSelected,
+.qv-listbox li.selected {
+    background-color: #ff9900;
+    color: #fff;
+    border-bottom: 1px solid #bc7407;
+}
+
+.qv-selection-toolbar {
+    background-color: #272b39;
+}
+
+.qv-listbox li.serverOptional {
+    color: white;
+    border-bottom: 1px solid #3b4555;
+}
+
+
+.qv-collapsed-listbox {
+    border: 1px solid #475465;
+    background-color: #272B39!important;
+}
+
+
+
+/* END QLIK NATIVE OBJECTS */
 
 
 /* PARA DESKTOP */
@@ -305,6 +378,7 @@ a {
 
 .page {
     padding: 10px;
+    flex: 1;
 }
 
 /* PAGE DASHBOARD */
@@ -326,3 +400,101 @@ a {
 }
 
 /* END QLIK TABLE TITLE */
+
+
+
+/* LOADER - DONT REMOVE!!!  */
+
+.sk-folding-cube {
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+  
+.sk-folding-cube .sk-cube {
+float: left;
+width: 50%;
+height: 50%;
+position: relative;
+-webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+        transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #333;
+-webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+        animation: sk-foldCubeAngle 2.4s infinite linear both;
+-webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+-webkit-transform: scale(1.1) rotateZ(90deg);
+        transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+-webkit-transform: scale(1.1) rotateZ(180deg);
+        transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+-webkit-transform: scale(1.1) rotateZ(270deg);
+        transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+-webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+-webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+-webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+} 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+} 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+} 
+}
+
+@keyframes sk-foldCubeAngle {
+0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+} 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+} 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+}
+}
+
+
+/* LOADER COLOR */
+.sk-folding-cube .sk-cube:before {
+    background: gold;
+}

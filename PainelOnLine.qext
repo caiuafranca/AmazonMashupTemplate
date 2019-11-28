@@ -1,9 +1,9 @@
 {
     "type": "mashup",
-    "name": "Amazon Mashup",
-    "description": "Mashup para fins de treinamento",
+    "name": "Painel On Line",
+    "description": "Mashup para Vizualização para a Direção",
     "version": "1.0.0",
-    "author": "Cluster",
+    "author": "Dados e Metricas",
     "keywords": "qlik-sense, visualization, mashup",
     "dependencies": {
         "qlik-sense": ">=3.0.x"

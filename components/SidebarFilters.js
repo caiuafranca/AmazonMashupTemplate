@@ -8,7 +8,7 @@ class SidebarFilters extends React.Component {
 
     componentDidMount(){
 
-        this.props.app.getObject("filters", "mQGMhh");
+        this.props.app.getObject("filters", "ycppXj");
 
         this.props.app.getList('CurrentSelections', (data) => {
             let selectionsArray = data.qSelectionObject.qSelections;
@@ -27,6 +27,9 @@ class SidebarFilters extends React.Component {
                 fontFamily: "Roboto",
                 color: "white"
             },
+            sidebarTitle: {
+                fontSize: "16px"
+            },
             clearButton: {
                 backgroundColor: "#FFCA47",
                 fontFamily: "Roboto",
@@ -36,21 +39,29 @@ class SidebarFilters extends React.Component {
                 width: "100%",
                 height: "35px",
                 fontWeight: "bold",
-                border: "none"
+                border: "none",
+                marginTop: "18px",
+                marginBottom: "18px",
+                cursor: "pointer"
             },
             selectionsContainer: {
                 height: "146px",
                 backgroundColor: "#262B3D",
                 overflow: "auto"
             },
+            selectionItem: {
+                marginBottom: "10px",
+                marginTop: "5px"
+            },
             selectionContainer: {
                 display: "flex",
                 alignItems: "center",
-                background: "orange",
+                background: "#FF9900",
                 color: "white",
                 fontFamily: "Roboto",
                 fontSize: "12px",
-                padding: "6px"
+                padding: "2px 6px",
+                justifyContent: "space-between"
             },
             fieldName: {
                 fontSize: "12px",
@@ -64,30 +75,53 @@ class SidebarFilters extends React.Component {
                 color: "white",
                 cursor: "pointer"
             },
+            clearFieldButton: {
+                background: "transparent",
+                border: "none",
+                cursor: "pointer"
+            },
+            closeButton: {
+                background: "transparent",
+                border: "none",
+                cursor: "pointer"
+            },
             filters: {
-                height: "300px",
+                height: "240px",
                 width: "100%"
+            },
+            emptySelectionsContainer: {
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
+                height: "100%"
             }
         }
 
-
         let selectionElements = [];
+        let selectionList = "";
 
         if(this.state.selections.length > 0) {
             for(var i = 0; i < this.state.selections.length; i++)  {
                 let fieldName = this.state.selections[i].qField;
                 let selectionsString = this.state.selections[i].qSelected;
 
-                selectionElements.push(<li class="selections-item">
+                selectionElements.push(<li style={styles.selectionItem}>
                                 <span style={styles.fieldName}>{fieldName}</span>
                                 <div style={styles.selectionContainer}>
                                     <span class="selection-value">{selectionsString}</span>
-                                    <button class="clear-selection" onClick={() => { this.props.app.field(fieldName).clear() }}>X</button>
+                                    <button class="clear-selection" style={styles.clearFieldButton} onClick={() => { this.props.app.field(fieldName).clear() }}>
+                                        <Icon name="close" color="white"></Icon>
+                                    </button>
                                 </div>
                             </li>)
             }
+
+            selectionList = <ul class="selections-list">{selectionElements}</ul>;
+
         } else {
-            selectionElements = "NENHUM FILTRO APLICADO";
+            selectionList = <div style={styles.emptySelectionsContainer}><span>NENHUM FILTRO APLICADO</span></div>;
         }   
         
         return (
@@ -95,16 +129,16 @@ class SidebarFilters extends React.Component {
 
                 {/* HEADER */}
                 <div class="sidebar-header" style={styles.sidebarHeader}>
-                    <span>Seleções atuais</span>
-                    <button onClick={() => { this.props._onCloseSidebarFilters({sidebarFiltersOpened: false}) }}>X</button>
+                    <span style={styles.sidebarTitle}>Seleções atuais</span>
+                    <button style={styles.closeButton} onClick={() => { this.props._onCloseSidebarFilters({sidebarFiltersOpened: false}) }}>
+                        <Icon name="close" color="white"></Icon>
+                    </button>
                 </div>
                 
                 
                 {/* SELECOES ATUAIS */}
                 <div style={styles.selectionsContainer}>
-                    <ul class="selections-list">
-                        {selectionElements}
-                    </ul>
+                    {selectionList}
                 </div>
 
                 <button style={styles.clearButton} onClick={ () => { this.props.app.clearAll() }}>LIMPAR</button>

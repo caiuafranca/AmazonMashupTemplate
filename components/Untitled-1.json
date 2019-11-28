@@ -1,0 +1,116 @@
+{
+    "id": "Id de referencia interno",
+    "reference": "Id de referencia do pedido",
+    "shortReference": "Extranet Id",
+    "createdAt": "Timestamp do pedido",
+    "type": "Tipo do pedido('DELIVERY' ou 'TOGO')",
+    "merchant": {
+        "id": "Identificador unico do restaurante⁎",
+        "name": "Nome do restaurante",
+        "phones": [
+            "Telefone do restaurante"
+        ],
+        "address": {
+            "formattedAddress": "Endereço formatado",
+            "country": "Pais",
+            "state": "Estado",
+            "city": "Cidade",
+            "neighborhood": "Bairro",
+            "streetName": "Endereço (Tipo logradouro + Logradouro)",
+            "streetNumber": "Numero",
+            "postalCode": "CEP"
+        }
+    },
+    "payments": [   //Forma de pagamento⁎⁎
+        {
+            "name": "Nome da forma de pagamento",
+            "code": "Codigo da forma de pagamento⁎⁎⁎",
+            "value": "Valor pago na forma",
+            "prepaid": "Pedido pago ('true' ou 'false')",
+            "issuer": "Bandeira"
+        }
+        
+    ],
+    "customer": {
+        "id": "Id do cliente",
+        "name": "Nome do cliente",
+        "taxPayerIdentificationNumber": "CPF/CNPJ do cliente ",
+        "phone": "0800 + ID",
+        "email": "Email do cliente"
+    },
+    "items": [
+        {
+            "name": "Nome do item",
+            "quantity": "Quantidade",
+            "price": "Preço",
+            "subItemsPrice": "Preço dos subitens",
+            "totalPrice": "Preço total",
+            "discount": "Desconto",
+            "addition": "Adição",
+            "externalCode": "Código do e-PDV",
+            "subItems": [
+                {
+                    "name": "Nome do item",
+                    "quantity": "Quantidade",
+                    "price": "Preço",
+                    "totalPrice": "Preço total",
+                    "discount": "Desconto",
+                    "addition": "Adição",
+                    "externalCode": "Código do e-PDV"
+                }
+            ]
+        },
+        {
+            "name": "Nome do item",
+            "quantity": "Quantidade",
+            "price": "Preço",
+            "subItemsPrice": "Preço dos subitens",
+            "totalPrice": "Preço total",
+            "discount": "Desconto",
+            "addition": "Adição",
+            "subItems": [
+                {
+                    "name": "Nome do item",
+                    "quantity": "Quantidade",
+                    "price": "Preço",
+                    "totalPrice": "Preço total",
+                    "discount": "Desconto",
+                    "addition": "Adição",
+                    "externalCode": "Código e-PDV"
+                }
+            ]
+        },
+        {
+            "name": "Nome do item",
+            "quantity": "A Quantidade do subitem OBS.: A quantidade do subitem é para cada unidade de item ou seja se o valor o item for maior que 1 o valor do subitem deve ser multiplicado",
+            "price": "O Preço do subitem é para cada unidade de item ou seja se o valor o item for maior que 1 o valor do subitem deve ser multiplicado",
+            "subItemsPrice": "Preço dos subitens",
+            "totalPrice": "Preço total",
+            "discount": "Desconto",
+            "addition": "Adição",
+            "externalCode": "Código do e-PDV",
+            "observations": "Observação do item"
+        }
+    ],
+    "subTotal": "Total do pedido(Sem taxa de entrega)",
+    "totalPrice": "Total do pedido(Com taxa de entrega)",
+    "deliveryFee": "Taxa de entrega",
+    "deliveryAddress": {
+        "formattedAddress": "Endereço completo de entrega",
+        "country": "Pais",
+        "state": "Estado",
+        "city": "Cidade",
+        "coordinates": {
+            "latitude": "Latitude do endereço",
+            "longitude": "Longitude do endereço"
+        },
+        "neighborhood": "Bairro",
+        "streetName": "Endereço(Tipo logradouro + Logradouro)",
+        "streetNumber": "Numero",
+        "postalCode": "CEP",
+        "reference": "Referencia",
+        "complement": "Complemento do endereço"
+    },
+    "deliveryDateTime": "Timestamp do pedido",
+    "preparationTimeInSeconds": "Tempo de preparo do pedido em segundos"
+}

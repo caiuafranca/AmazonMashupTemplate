@@ -12,6 +12,15 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+
+        window.onresize = () => {
+            var allCharts = document.querySelectorAll(".custom-echart");
+            allCharts.forEach((element) => {
+                let chartId = element.getAttribute("_echarts_instance_");
+                echarts.getInstanceById(chartId).resize();
+            });
+        };
+
         browserHistory.listen((res) => {
             this.setState({
                 sidebarNavOpened: false,
@@ -38,7 +47,6 @@ class App extends React.Component {
         }
 
         if(this.state.app) {
-
             sidebarFilter = <SidebarFilters opened={this.state.sidebarFiltersOpened}
                             app={this.state.app}
                             _onCloseSidebarFilters={(message) => { this.onMessage(message)}}></SidebarFilters>;
@@ -65,9 +73,11 @@ class App extends React.Component {
                     this.setState({activePage: "#dashboard"})
                     break;
             }
+        } else {
+            page = <Loader></Loader>;
         }
 
-        return <div>
+        return <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
             <QlikConnection _onConnectionSuccessful={(message) => { this.onMessage(message)}}></QlikConnection>
             <Fade active={fadeActive} _onCloseSidebar={(message) => { this.onMessage(message) }}></Fade>
             <Navbar

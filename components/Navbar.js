@@ -21,8 +21,8 @@ class Navbar extends React.Component {
                 <button onClick={() => { this.openSidebarNav() }} class="btn-menu">
                     <Icon name="burger" color="#fff"></Icon>
                 </button>
-                <h2 class="app-title">Helpdesk Management</h2>
-                <img src="./res/img/logo-desktop.png"/>
+                <h2 class="app-title">BI - Nome do APP</h2>
+                <img src="./res/img/logo_ale__horizontal.png" width="100" heigth="150"/>
                 <button  onClick={() => { this.openSidebarFilters() }}class="btn-filters">
                     <Icon name="filter" color="#fff"></Icon>
                 </button>

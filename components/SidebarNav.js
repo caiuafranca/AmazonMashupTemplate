@@ -8,11 +8,12 @@ class SidebarNav extends React.Component {
     }
 
     render() {
+        
         return (
             <div className={this.props.opened ? "sidebar-nav opened" : "sidebar-nav"}>
                 <div class="sidebar-header">
-                    <img class="app-logo" src="./res/img/logo-mobile.png"/>
-                    <h1 class="app-title">Helpdesk Management</h1>
+                <img src="./res/img/logo_ale__horizontal.png" width="70" heigth="100"/>
+                <h1 class="app-title">Nome APP</h1>
                 </div>
                 <div class="sidebar-navigation">
                     <ul class="navigation-list">

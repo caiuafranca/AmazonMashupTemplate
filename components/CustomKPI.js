@@ -2,10 +2,7 @@ class CustomKPI extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {
-                value: "...",
-                label: "..."
-            }
+            data: {}
         };
 
         this.hypercubeDefinition = {
@@ -196,10 +193,18 @@ class CustomKPI extends React.Component {
             }
         }
 
-        return <div style={styles.kpiContainer}>
-            <span style={styles.kpiValue}>{this.state.data.value}</span>
-            <span style={styles.kpiLabel}>{this.state.data.label}</span>
-        </div>
+        let kpiObject = "";
+
+        if(!this.state.data.value) {
+            kpiObject = <ObjectLoader height="100px" width="50px" color="blue"></ObjectLoader>
+        } else {
+            kpiObject = <div style={styles.kpiContainer}>
+                <span style={styles.kpiValue}>{this.state.data.value}</span>
+                <span style={styles.kpiLabel}>{this.state.data.label}</span>
+            </div>
+        }
+
+        return kpiObject;
     }
 
 }

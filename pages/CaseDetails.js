@@ -10,7 +10,7 @@ class CaseDetails extends React.Component {
 
     render() {
         return <div class="page">
-            <QlikObject elementId="avgcase" app={this.props.app} objectId="uMespj" height="400px" width="100%"></QlikObject>
+            <QlikObject elementId="avgcase" app={this.props.app} objectId="rJFbvG" height="400px" width="100%"></QlikObject>
         </div>
     }
 }   
